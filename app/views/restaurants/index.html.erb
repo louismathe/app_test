@@ -1,0 +1,7 @@
+<ul class='list-inline text-center'>
+  <% @restaurants.each do |restaurant| %>
+    <li>
+      <%= "#{restaurant.name}  --- #{restaurant.description}" %>
+    </li>
+  <% end  %>
+</ul>
