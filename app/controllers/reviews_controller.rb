@@ -6,8 +6,9 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = Review.new(review_params)
-    @review.restaurant = @restaurant
+    # @review = Review.new(review_params)
+    # @review.restaurant = @restaurant
+    @review = @restaurant.reviews.build(review_params)
     @review.save
     redirect_to restaurant_path(@restaurant)
 
