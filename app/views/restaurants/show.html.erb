@@ -1,4 +1,20 @@
 <%= @restaurant.name %>
 
+<%= link_to "Add a review", new_restaurant_review_path(@restaurant) %>
 <%= link_to 'Check who\'s the chef', chef_restaurant_path(@restaurant)%>
 <%= link_to "Back to All Restaurants", restaurants_path %>
+
+
+
+
+
+
+
+
+<ul>
+  <% @restaurant.reviews.each do |review| %>
+    <li>
+      <%= review.content %>
+    </li>
+  <% end %>
+</ul>
