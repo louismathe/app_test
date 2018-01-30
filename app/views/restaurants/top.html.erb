@@ -1,4 +1,6 @@
+
 <ul class='list-inline text-center'>
+  <h3> 3 Stars Restaurants </h3>
   <% @restaurants.each do |restaurant| %>
     <li>
       <%= "#{restaurant.name}  --- #{restaurant.description}" %>
@@ -7,8 +9,3 @@
     </li>
   <% end  %>
 </ul>
-
-
-
-<%= link_to "Add a new Restaurant", new_restaurant_path %>
-<%= link_to "3 stars Restaurants", top_restaurants_path %>

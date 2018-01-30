@@ -1,6 +1,9 @@
 class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
 
+  def top
+    @restaurants = Restaurant.where(stars: 3)
+  end
   def index
     @restaurants = Restaurant.all
   end
@@ -11,7 +14,6 @@ class RestaurantsController < ApplicationController
   def new
     @restaurant = Restaurant.new
   end
-
 
   def create
     @restaurant = Restaurant.new(restaurant_params)
@@ -33,12 +35,10 @@ class RestaurantsController < ApplicationController
     end
   end
 
-
   def destroy
     @restaurant.destroy
     redirect_to restaurants_path
   end
-
 
   private
 
