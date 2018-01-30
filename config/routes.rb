@@ -9,5 +9,6 @@ Rails.application.routes.draw do
     member do                             # member => restaurant id in URL
       get 'chef', to: 'restaurants#chef'  # RestaurantsController#chef
     end
+    resources :reviews, only: [ :new, :create ]
   end
 end
