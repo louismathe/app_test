@@ -1,5 +1,8 @@
 <%= @restaurant.name %>
-
+<% if @restaurant.photo.present? %>
+  <%= cl_image_tag @restaurant.photo, height: 300, width: 400, crop: :fill %>
+<% end %>
+<br>
 <%= link_to "Add a review", new_restaurant_review_path(@restaurant) %>
 <%= link_to 'Check who\'s the chef', chef_restaurant_path(@restaurant)%>
 <%= link_to "Back to All Restaurants", restaurants_path %>
