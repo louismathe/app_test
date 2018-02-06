@@ -8,6 +8,24 @@
 
 puts 'Cleaning database...'
 Restaurant.destroy_all
+User.destroy_all
+Review.destroy_all
+
+puts 'Creating users...'
+users_attributes = [
+  {
+    email:         "titi@titi.fr",
+    password:      "123456789"
+  },
+  {
+    email:         "toto@toto.fr",
+    password:      "123456789"
+  }
+]
+User.create!(users_attributes)
+puts 'Finished!'
+
+
 
 puts 'Creating restaurants...'
 restaurants_attributes = [
@@ -16,21 +34,24 @@ restaurants_attributes = [
     address:      "112 rue du Fg St-Honoré 75008 Paris",
     description:  "Face au jardin, on découvre une salle lumineuse... et la cuisine d'Éric Frechon.",
     stars:        3,
-    chef:         'Éric Frechon'
+    chef:         'Éric Frechon',
+    user:          User.first
   },
   {
     name:         "La truffière",
     address:      "4 rue Blainville 75005 Paris",
     description:  "Une valeur sûre que cette belle maison du 17e et les recettes de Jean-Christophe Rizet",
     stars:        1,
-    chef:         'Jean-Christophe Rizet'
+    chef:         'Jean-Christophe Rizet',
+    user:         User.first
   },
   {
     name:         "Le pré catelan",
     address:      "route de Suresnes 75016 Paris",
     description:  "Oeil vif, geste sûr: impossible de distinguer, dans les créations de Frédéric Anton...",
     stars:        3,
-    chef:         'Frédéric Anton'
+    chef:         'Frédéric Anton',
+    user:         User.last
   }
 ]
 Restaurant.create!(restaurants_attributes)
