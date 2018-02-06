@@ -8,7 +8,7 @@
       <% end %>
 
       <% if policy(restaurant).destroy? %>
-        <%= link_to "Delete", restaurant_path(restaurant), method: :delete %>
+        <%= link_to "Delete", restaurant_path(restaurant), method: :delete, data: {confirm: 'Are you sure?'} %>
       <% end %>
     </li>
   <% end  %>
