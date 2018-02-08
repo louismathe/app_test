@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :restaurants
+  
+  acts_as_token_authenticatable
 end
