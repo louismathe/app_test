@@ -8,6 +8,7 @@ class RestaurantPolicy < ApplicationPolicy
 
   def create?
     true
+    # !user.nil?
   end
 
   def chef?
