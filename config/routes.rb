@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :people
+  resources :books
   namespace :admin do
     resources :users
     resources :restaurants
